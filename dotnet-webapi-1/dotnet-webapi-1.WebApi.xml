@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet-webapi-1</name>
+    </assembly>
+    <members>
+        <member name="T:dotnet_webapi_1.Controllers.BooksController">
+            <summary>
+            /api/books的控制器
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.#ctor(dotnet_webapi_1.Services.BookService)">
+            <summary>
+            Books的控制器生成
+            </summary>
+            <param name="bookService"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.Get">
+            <summary>
+            GET请求: api/books 获得所有的图书
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.Get(System.String)">
+            <summary>
+            GET请求: aip/books/{ID} 获得一本书
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.Create(dotnet_webapi_1.Models.Book)">
+            <summary>
+            POST请求: api/books 创建一本书
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.Update(System.String,dotnet_webapi_1.Models.Book)">
+            <summary>
+            PUT请求: api/books/{ID} 更新请求
+            </summary>
+            <param name="id"></param>
+            <param name="bookIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.BooksController.Delete(System.String)">
+            <summary>
+            DELET请求: api/books/{ID}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dotnet_webapi_1.Controllers.ValuesController">
+            <summary>
+            Value控制器 (最初的Demo)
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.ValuesController.Get">
+            <summary>
+            GET请求: api/values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            GET请求: api/values/{ID}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            POST请求: api/values
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            PUT请求: api/values/{ID}
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            Delelet请求: api/values/{ID}
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:dotnet_webapi_1.Models.Book">
+            <summary>
+            Book的MongoDB.BSON结构
+            </summary>
+        </member>
+        <member name="P:dotnet_webapi_1.Models.Book.Id">
+            <summary>
+            ID 对应MongoDB自带的主键
+            </summary>
+        </member>
+        <member name="P:dotnet_webapi_1.Models.Book.BookName">
+            <summary>
+            书名
+            </summary>
+        </member>
+        <member name="P:dotnet_webapi_1.Models.Book.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:dotnet_webapi_1.Models.Book.Category">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:dotnet_webapi_1.Models.Book.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="T:dotnet_webapi_1.Program">
+            <summary>
+            主类
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Program.Main(System.String[])">
+            <summary>
+            启动方法
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            WebHost的构建函数
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dotnet_webapi_1.Services.BookService">
+            <summary>
+            BookService
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            BookService初始化
+            用来连接服务器啥的
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Get">
+            <summary>
+            查询所有的图书
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Get(System.String)">
+            <summary>
+            根据ID查一本书
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Create(dotnet_webapi_1.Models.Book)">
+            <summary>
+            创建一本书
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Update(System.String,dotnet_webapi_1.Models.Book)">
+            <summary>
+            更新一本书的信息
+            </summary>
+            <param name="id"></param>
+            <param name="bookIn"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Remove(dotnet_webapi_1.Models.Book)">
+            <summary>
+            根据对象删除一本书
+            </summary>
+            <param name="bookIn"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Services.BookService.Remove(System.String)">
+            <summary>
+            根据ID删除一本书
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:dotnet_webapi_1.Startup">
+            <summary>
+            启动类
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:dotnet_webapi_1.Startup.Configuration">
+            <summary>
+            不知道干什么的配置
+            </summary>
+        </member>
+        <member name="M:dotnet_webapi_1.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:dotnet_webapi_1.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:TodoApi.Controllers.TodoController">
+            <summary>
+            ToDo的控制器
+            </summary>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.#ctor(dotnet_webapi_1.Models.TodoContext)">
+            <summary>
+            ToDo控制器的生成函数
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.GetTodoItems">
+            <summary>
+            GET请求: api/ToDo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.GetTodoItem(System.Int64)">
+            <summary>
+            GET请求: api/Todo/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.PostTodoItem(dotnet_webapi_1.Models.TodoItem)">
+            <summary>
+            POST请i去: POST: api/Todo
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.PutTodoItem(System.Int64,dotnet_webapi_1.Models.TodoItem)">
+            <summary>
+            PUT请求: api/Todo/{ID}
+            </summary>
+            <param name="id"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.DeleteTodoItem(System.Int64)">
+            <summary>
+            DELET请i去: api/Todo/{ID}
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
